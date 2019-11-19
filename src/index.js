@@ -8,8 +8,8 @@ import Users from './components/Users'
 const routing = (
     <Router>
         <div>
-            <Route exact path="/" component = {App} />
-            <Route path="/users" component={Users} />
+            <Route exact path="/" component = { App } />
+            <Route path="/users" component={ Users } />
         </div>
     </Router>
 );
