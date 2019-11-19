@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build files
+build
+dist
+lib
+
+# VSCode
+.DS_Store
+.vscode/
+
+# dotenv environment variables file
+.env
