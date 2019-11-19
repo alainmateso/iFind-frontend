@@ -1,17 +1,14 @@
 import React from 'react';
-import logo from './zoom.png';
 import './App.css';
+import { Provider } from 'react-redux';
+import Store from './reduxStore';
+import HomeComponent from './components/homeComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to iFind
-        </p>
-      </header>
-    </div>
+    <Provider store={Store} >
+      <HomeComponent />
+    </Provider>
   );
 }
 
