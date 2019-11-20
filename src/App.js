@@ -7,7 +7,7 @@ import logo from './zoom.png';
 
 function App() {
   return (
-    <Provider store={Store} >
+    <Provider store={Store}>
       <HomeComponent />
     </Provider>
   );
