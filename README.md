@@ -1,4 +1,6 @@
 ![Maintainability](https://api.codeclimate.com/v1/badges/f3ee363b193e54c6eae2/maintainability)
+[![Build Status](https://travis-ci.com/alainmateso/iFind-frontend.svg?branch=develop)](https://travis-ci.com/alainmateso/iFind-frontend)
+
 
 # Welcome to iFind
 
