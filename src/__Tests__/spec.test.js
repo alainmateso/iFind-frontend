@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import Store from '../../src/reduxStore';
-import HomeComponent from '../components/homeComponent';
+import HomeComponent from '../components/HomeComponent';
 import { shallow } from 'enzyme';
 import App from '../../src/App';
 
