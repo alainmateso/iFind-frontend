@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Loader from 'react-loader-spinner';
 import { fetchPosts } from '../../actions/postActions';
 import PostComponent from '../partials/SinglePostComponent';
 
@@ -12,13 +13,17 @@ class HomeComponent extends Component {
   }
 
   render() {
-    const { posts } = this.props.posts;
+    const { posts: { posts } } = this.props;
     const postsLength = posts.length;
-
     if (postsLength === 0) {
       return (
-        <div className="App">
-          <h1>loading...</h1>
+        <div className="loader">
+          <Loader
+            type="Triangle"
+            color="#f85c70"
+            height={100}
+            width={100}
+          />
         </div>
       );
     }

@@ -4,10 +4,11 @@ import React from 'react';
 export default () => (
     <div className="navbar">
         <h3>iFind</h3>
-        <div className="navSearch">
+
+        {/* <div className="navSearch">
             <input className="input-search" placeholder="Search...." />
             <button type="submit" className="btn btn-search">Search</button>
-        </div>
+        </div> */}
         <ul className="navLinks">
             <li className="navItem">
                 <img src="/home.png" alt="account" />
