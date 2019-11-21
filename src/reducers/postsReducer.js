@@ -1,15 +1,15 @@
-import { DEFAULT_ACTION } from '../actions/types';
+import { GET_POSTS } from '../actions/types';
 
 const initialState = {
-  text: '',
+  posts: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case DEFAULT_ACTION:
+    case GET_POSTS:
       return {
         ...state,
-        text: action.payload,
+        posts: action.payload,
       };
     default:
       return state;
