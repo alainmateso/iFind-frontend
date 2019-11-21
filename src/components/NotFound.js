@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
-import notFound from '../../src/notfound.png'
+import React from 'react';
 
-export class NotFound extends Component {
-    render() {
-        return (
-            <div>
-                <img src={ notFound } className="notFound" alt="Not Found"/>
-            </div>
-        )
-    }
-}
+const NotFound = () => (
+    <div>
+      <h1>404 - Page Not Found</h1>
+    </div>
+);
 
-export default NotFound
+export default NotFound;
