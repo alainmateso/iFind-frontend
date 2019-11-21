@@ -1,30 +1,59 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { Component } from 'react';
 
-export default () => (
-    <div className="navbar">
-        <h3>iFind</h3>
-        <div className="navSearch">
-            <input className="input-search" placeholder="Search...." />
-            <button type="submit" className="btn btn-search">Search</button>
-        </div>
-        <ul className="navLinks">
-            <li className="navItem">
-                <img src="/home.png" alt="account" />
-                <a href="#">Home</a>
+export default class MenuComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuItems: [
+        {
+          id: 1,
+          name: 'home',
+          label: 'Home',
+          image: '/home.png',
+        },
+        {
+          id: 2,
+          name: 'create-post',
+          label: 'Create Post',
+          image: '/add.png',
+        },
+        {
+          id: 3,
+          name: 'my-posts',
+          label: 'My Posts',
+          image: '/open-book.png',
+        },
+        {
+          id: 4,
+          name: 'logout',
+          label: 'Logout',
+          image: '/logout.png',
+        },
+      ],
+    };
+  }
+
+  render() {
+    const { menuItems } = this.state;
+    const renderMenu = (items) => items.map((item) => (
+            <li className="navItem" key={item.id}>
+                <img src={item.image} alt={item.name} />
+                <a href="#">{item.label}</a>
             </li>
-            <li className="navItem">
-                <img src="/add.png" alt="account" />
-                <a href="#">Create Post</a>
-            </li>
-            <li className="navItem">
-                <img src="/open-book.png" alt="account" />
-                <a href="#">My Posts</a>
-            </li>
-            <li className="navItem">
-                <img src="/logout.png" alt="account" />
-                <a href="#">Logout</a>
-            </li>
-        </ul>
-    </div>
-);
+    ));
+
+    return (
+            <div className="navbar">
+                <h3>iFind</h3>
+                {/* <div className="navSearch">
+                         <input className="input-search" placeholder="Search...." />
+                         <button type="submit" className="btn btn-search">Search</button>
+                     </div> */}
+                <ul className="navLinks">
+                    {renderMenu(menuItems)}
+                </ul>
+            </div>
+    );
+  }
+}
