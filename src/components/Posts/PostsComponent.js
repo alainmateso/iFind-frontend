@@ -31,7 +31,7 @@ class HomeComponent extends Component {
     return (
       <div className="posts-container">
         {
-          posts.data.map((post) => <PostComponent key={post.id} post={post} />)
+          posts.data.map((post) => <PostComponent history={this.props.props.history} key={post.id} post={post} />)
         }
       </div>
     );

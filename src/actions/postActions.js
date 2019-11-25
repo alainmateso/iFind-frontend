@@ -1,6 +1,7 @@
 import axois from 'axios';
 import {
   GET_POSTS, FILTER_FOUND_POSTS, FILTER_LOST_POSTS, UNFILTER_POSTS,
+  SET_POST_TO_STATE, GET_POST_FROM_STATE
 } from './types';
 
 // eslint-disable-next-line import/prefer-default-export
@@ -22,3 +23,13 @@ export const filterLostPosts = () => (dispatch) => dispatch({
 export const unfilterPosts = () => (dispatch) => dispatch({
   type: UNFILTER_POSTS,
 });
+
+export const setPostToState = (post) => (dispatch) => dispatch({
+  type: SET_POST_TO_STATE,
+  payload: post
+});
+
+export const getPostFromState = () => (dispatch) => dispatch({
+  type: GET_POST_FROM_STATE
+});
+

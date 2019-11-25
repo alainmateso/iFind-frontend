@@ -1,5 +1,5 @@
 import {
-  GET_POSTS, FILTER_FOUND_POSTS, FILTER_LOST_POSTS, UNFILTER_POSTS,
+  GET_POSTS, FILTER_FOUND_POSTS, FILTER_LOST_POSTS, UNFILTER_POSTS, SET_POST_TO_STATE, GET_POST_FROM_STATE
 } from '../actions/types';
 
 const initialState = {
@@ -7,6 +7,7 @@ const initialState = {
   posts: [],
   foundPosts: [],
   lostPosts: [],
+  post: {}
 };
 
 export default (state = initialState, action) => {
@@ -40,6 +41,17 @@ export default (state = initialState, action) => {
         ...state,
         posts: initialState.allPosts,
       };
+
+    case SET_POST_TO_STATE:
+      return {
+        ...state,
+        post: action.payload
+      }
+    case GET_POST_FROM_STATE:
+      return {
+        ...state,
+        post: initialState.post
+      }
     default:
       return state;
   }

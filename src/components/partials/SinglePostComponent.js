@@ -3,6 +3,18 @@
 import React, { Component } from 'react';
 
 export default class PostComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      viewSingle: (post) => {
+        this.props.history.push({
+          pathname: `/posts/${post.id}`,
+          item: post
+        })
+      }
+    }
+  }
   render() {
     const { post } = this.props;
     return (
@@ -16,7 +28,9 @@ export default class PostComponent extends Component {
           <p>{`Phone number: ${post.phonenumber}`}</p>
           <p>{`Email: ${post.email}`}</p>
         </div>
-        <button type="submit" className="btn btn-view-more">View Item</button>
+        <button type="submit" className="btn btn-view-more" onClick={() => {
+          this.state.viewSingle(post)
+        }}>View Item</button>
       </div>
     );
   }
