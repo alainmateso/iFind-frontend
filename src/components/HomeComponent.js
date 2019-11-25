@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import defaultAction from '../actions/defaultActions';
 import logo from '../zoom.png';
@@ -7,11 +8,18 @@ import logo from '../zoom.png';
 
 class HomeComponent extends Component {
   componentDidMount() {
-    this.props.defaultAction();
+    const { props } = this;
+    props.defaultAction();
   }
 
   render() {
     const { text } = this.props;
+
+    const linkStyle = {
+      color: '#fff',
+      // textDecoration: 'none',
+    };
+
     return (
             <div className="App">
                 <header className="App-header">
@@ -19,6 +27,11 @@ class HomeComponent extends Component {
                     <p>
                         Welcome to iFind!!!
                     </p>
+                    <Link to="/users" style={linkStyle}>Signup</Link>
+{' '}
+|
+{' '}
+<Link to="/users/login" style={linkStyle}>Sign In</Link>
                     <h1>{text}</h1>
                 </header>
             </div>
@@ -28,6 +41,7 @@ class HomeComponent extends Component {
 
 HomeComponent.propTypes = {
   text: PropTypes.string.isRequired,
+  defaultAction: PropTypes.func.isRequired,
 };
 
 
