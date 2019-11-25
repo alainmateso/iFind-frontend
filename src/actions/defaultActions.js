@@ -1,10 +1,9 @@
 import { DEFAULT_ACTION } from './types';
 
-const defaultAction = () => (dispatch) => {
+// eslint-disable-next-line import/prefer-default-export
+export const defaultAction = () => (dispatch) => {
   dispatch({
     type: DEFAULT_ACTION,
     payload: 'Redux works!',
   });
 };
-
-export default defaultAction;
