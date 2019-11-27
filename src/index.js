@@ -5,13 +5,16 @@ import './index.scss';
 import App from './App';
 import Users from './components/UsersComponent';
 import NotFound from './components/NotFound';
+// import Users from './components/Users';
+import Post from './components/postForm';
 
 const routing = (
     <Router>
         <div>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component= {App} />
             <Route path="/users" component={Users} />
             <Route path="*" omponent={NotFound} />
+            <Route path="/post" component={ Post} />
         </div>
     </Router>
 );
